@@ -1,0 +1,120 @@
+{
+  // see configuration https://biomejs.dev/reference/configuration/
+  "$schema": "https://biomejs.dev/schemas/1.7.1/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "maxSize": 5242880,
+    "ignore": ["**/.vscode/**"]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto"
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    }
+  },
+  "json": {
+    "parser": {
+      "allowComments": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    // see rules https://biomejs.dev/linter/rules/
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        // recommended rules
+        "noSvgWithoutTitle": "off",
+        "useAltText": "off",
+        "useButtonType": "off",
+        "useKeyWithClickEvents": "off",
+        "useMediaCaption": "off",
+        "useValidAriaRole": "off"
+      },
+      "complexity": {
+        // recommended rules
+        "noExtraBooleanCast": "off",
+        "noForEach": "off",
+        "useArrowFunction": "off",
+        "useLiteralKeys": "off",
+        "useOptionalChain": "off"
+      },
+      "correctness": {
+        // optional rules
+        "noNewSymbol": "error",
+        "noUndeclaredVariables": "warn",
+        "noUnusedImports": "warn",
+        "noUnusedVariables": "error"
+      },
+      "style": {
+        // recommended rules
+        "noParameterAssign": "off",
+        "noUnusedTemplateLiteral": "off",
+        "noUselessElse": "off",
+        "useImportType": "off",
+        "useNodejsImportProtocol": "off",
+        "useTemplate": "off",
+
+        // optional rules
+        "noNamespace": "error",
+        "useConsistentArrayType": "error"
+      },
+      "suspicious": {
+        // recommended rules
+        "noArrayIndexKey": "off",
+        "noAssignInExpressions": "off",
+        "noControlCharactersInRegex": "off",
+        "noDebugger": "warn",
+        "noDoubleEquals": "off",
+        "noExplicitAny": "off",
+        "noExportsInTest": "off",
+        "noGlobalIsNan": "off",
+        "noImplicitAnyLet": "off",
+        "noMisleadingCharacterClass": "off",
+        "noPrototypeBuiltins": "off",
+        "noShadowRestrictedNames": "off",
+        "noThenProperty": "off",
+
+        // optional rules
+        "noEmptyBlockStatements": "error"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "include": ["src/**"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "useHookAtTopLevel": "error"
+          },
+          "suspicious": {
+            "noConsoleLog": "warn"
+          }
+        }
+      }
+    }
+  ]
+}
