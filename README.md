@@ -1,33 +1,28 @@
-# ai-fe-exam
+# Description
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a Writer/Editor Dashboard that allows users to create, edit, and publish articles related to a company. The dashboard is built using Vue.js for the frontend and is connected to a backend server for data management. The platform includes user authentication and role-based access for writers and editors, enabling a streamlined workflow for article management.
 
-## Recommended IDE Setup
+## 🔗 Links
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Live Site:** [Production Server](https://ai-fe-exam.vercel.app/)
+- **Frontend Repository:** [Frontend GitHub](https://github.com/impaulintech/ai-fe-exam)
 
-## Type Support for `.vue` Imports in TS
+## Developers
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- [@JohnPaul](https://github.com/impaulintech)
 
-## Customize configuration
+## Quality Assurance
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- [@JohnPaul](https://github.com/impaulintech)
 
-## Project Setup
+# Installation
 
-```sh
-npm install
-```
+Clone the project repositories with GitHub:
 
-### Compile and Hot-Reload for Development
+```bash
+  $ git clone https://github.com/impaulintech/ai-fe-exam.git
 
-```sh
-npm run dev
-```
+  or
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
+  $ git clone git@github.com:impaulintech/ai-fe-exam.git
 ```
