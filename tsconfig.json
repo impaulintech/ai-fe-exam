@@ -4,21 +4,14 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "target": "es6",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
+    "allowJs": true,
     "esModuleInterop": true,
+    "module": "esnext",
+    "target": "es6",
+    "moduleResolution": "node",
+    "jsx": "preserve",
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "strict": true
   },
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
