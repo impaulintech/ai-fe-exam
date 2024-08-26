@@ -2,23 +2,21 @@
 	<div class="flex h-screen relative">
 		<div
 			class="w-3/5 bg-cover bg-center hidden lg:block"
-			:style="{ backgroundImage: `url(${backgroundImage})` }"
+			:style="{ backgroundImage: `url(${BackgroundImage})` }"
 		>
 			<div class="flex items-start p-10">
-				<img :src="logo" alt="Logo" class="h-12" />
+				<img :src="LogoXL" alt="Logo" class="h-12" />
 			</div>
 		</div>
 
 		<div class="absolute lg:hidden top-10 left-10">
-			<img :src="logo" alt="Logo" class="h-12" />
+			<img :src="LogoXL" alt="Logo" class="h-12" />
 		</div>
 
-		<div
-			class="w-full lg:w-2/5 flex items-center justify-center bg-theme-60"
-		>
+		<div class="w-full lg:w-2/5 flex items-center justify-center bg-theme-60">
 			<div class="w-96 p-8 rounded-md">
 				<img
-					:src="profile"
+					:src="Profile"
 					alt="Profile"
 					class="w-16 h-16 rounded-full mx-auto"
 				/>
@@ -69,36 +67,16 @@
 	</div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-import logo from "@/assets/images/logo_xl.png";
-import profile from "@/assets/svg/profile.svg";
-import backgroundImage from "@/assets/images/login_cover.png";
+<script setup lang="ts">
+import { useHooks } from "./hooks";
 
-export default defineComponent({
-	setup() {
-		const username = ref("");
-		const password = ref("");
-		const rememberMe = ref(false);
-
-		const handleLogin = () => {
-			console.log(
-				"Logging in with:",
-				username.value,
-				password.value,
-				rememberMe.value,
-			);
-		};
-
-		return {
-			username,
-			password,
-			rememberMe,
-			handleLogin,
-			logo,
-			profile,
-			backgroundImage,
-		};
-	},
-});
+const {
+	username,
+	password,
+	rememberMe,
+	LogoXL,
+	Profile,
+	BackgroundImage,
+	handleLogin,
+} = useHooks();
 </script>

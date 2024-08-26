@@ -1,9 +1,10 @@
-import EditorDashboard from '@/views/EditorDashboard.vue'
-import LoginView from '@/views/LoginView.vue'
-import WriterDashboard from '@/views/WriterDashboard.vue'
+import Dashboard from '@/views/Dashboard/index.vue'
+import LoginView from '@/views/LoginView/index.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const isAuthenticated = () => {
+  // Update this temporary function to check if the user is authenticated
+  // Get response from API if user is authenticated
   return localStorage.getItem('user') !== null
 }
 
@@ -19,17 +20,17 @@ const router = createRouter({
       },
     },
     {
-      path: '/writer-dashboard',
+      path: '/dashboard',
       name: 'writer-dashboard',
-      component: WriterDashboard,
+      component: Dashboard,
       meta: {
         requiresAuth: true,
       },
     },
     {
-      path: '/editor-dashboard',
+      path: '/dashboard',
       name: 'editor-dashboard',
-      component: EditorDashboard,
+      component: Dashboard,
       meta: {
         requiresAuth: true,
       },
