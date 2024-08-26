@@ -3,7 +3,7 @@ import ArticleCard from '@/components/Cards/Article/index.vue'
 import CountCard from '@/components/Cards/Count/index.vue'
 import NavigationBar from '@/components/Navigations/NavigationBar/index.vue'
 import Footer from '@/components/Templates/Footer.vue'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 export type Role = 'editor' | 'writer'
 
@@ -24,6 +24,19 @@ interface Article {
 export const useHooks = () => {
   const activeTab = ref<Status>('for-edit')
   const activeUser = ref<Role>('writer')
+
+  const initializeActiveUser = () => {
+    const userRole = localStorage.getItem('user')
+    if (userRole === 'writer' || userRole === 'editor') {
+      activeUser.value = userRole as Role
+    } else {
+      activeUser.value = 'writer'
+    }
+  }
+
+  onMounted(() => {
+    initializeActiveUser()
+  })
 
   const editorCards = [
     {

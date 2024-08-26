@@ -3,6 +3,8 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import HamburgerMenu from '@/assets/svg/hamburger_menu.svg'
 import Profile from '@/assets/svg/profile.svg'
 import Logo from '@/components/Logo.vue'
+import Swal from 'sweetalert2'
+import { useRouter } from 'vue-router'
 
 export const UserTypes = {
   Editor: 'editor',
@@ -10,6 +12,7 @@ export const UserTypes = {
 } as const
 
 export const useHooks = () => {
+  const router = useRouter()
   const showDropdown = ref(false)
   const showDropdownMenu = ref(false)
   const dropdownRef = ref<HTMLElement | null>(null)
@@ -38,7 +41,29 @@ export const useHooks = () => {
   })
 
   const logout = () => {
-    // biome-disable-next-line noEmptyBlockStatements: TODO: Implement logout functionality
+    Swal.fire({
+      title: 'Are you sure you want to logout?',
+      text: 'All unsaved changes will be lost.',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Logout',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: '#0DCEDA',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.clear()
+        localStorage.setItem('logoutMessage', 'Thank you for visiting.')
+
+        router.push('/').then(() => {
+          Swal.fire({
+            title: 'Logout Successful!',
+            text: 'Thank you for visiting.',
+            icon: 'success',
+            confirmButtonColor: '#0DCEDA',
+          })
+        })
+      }
+    })
   }
 
   return {
