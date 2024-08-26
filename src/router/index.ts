@@ -3,8 +3,6 @@ import LoginView from '@/views/LoginView/index.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const isAuthenticated = () => {
-  // Update this temporary function to check if the user is authenticated
-  // Get response from API if user is authenticated
   return localStorage.getItem('user') !== null
 }
 
