@@ -20,9 +20,31 @@ This project is a Writer/Editor Dashboard that allows users to create, edit, and
 Clone the project repositories with GitHub:
 
 ```bash
-  $ git clone https://github.com/impaulintech/ai-fe-exam.git
+$ git clone https://github.com/impaulintech/ai-fe-exam.git
+# or
+$ git clone git@github.com:impaulintech/ai-fe-exam.git
+```
 
-  or
+### Navigate into the project directory, install project dependencies, and check Husky setup:
+```bash
+$ cd ai-fe-exam
+$ npm install
+$ npm check-husky
+```
 
-  $ git clone git@github.com:impaulintech/ai-fe-exam.git
+# Mock User Credentials
+These are the credentials to initially test the app:
+
+### Writer User
+
+```
+Username: writeruser
+Password: letmein
+```
+
+### Editor User
+
+```
+Username: editoruser
+Password: letmein
 ```
