@@ -36,7 +36,7 @@
 						Published
 					</button>
 				</div>
-				<div class="flex flex-wrap gap-8 justify-center align-center py-8">
+				<div class="flex flex-wrap gap-8 justify-center align-stretch py-8">
 					<ArticleCard
 						v-for="(article, index) in filteredArticles(activeTab, activeUser)"
 						:key="index"
